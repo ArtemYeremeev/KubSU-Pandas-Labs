@@ -156,7 +156,7 @@ married_set = marital.apply(lambda x: x if x in married_statuses else 'NaN')
 not_married_set = marital.apply(lambda x: x if x not in married_statuses else 'NaN')
 
 married_set = married_set.drop(married_set[married_set == 'NaN'].index) #Удаление неженатых из списка женатых
-notMarriedSet = notMarriedSet.drop(notMarriedSet[not_married_set == 'NaN'].index) #Удаление женатых из списка неженатых
+not_married_set = not_married_set.drop(not_married_set[not_married_set == 'NaN'].index) #Удаление женатых из списка неженатых
 
 if len(married_set) > len(not_married_set):
   print("Доля женатых среди богатых больше и составляет", len(married_set)/len(marital)*100, "процентов")
